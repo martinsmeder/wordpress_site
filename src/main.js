@@ -3,6 +3,7 @@ import platform from "./platform";
 import player from "./player";
 import targetDummy from "./targetDummy";
 import applyGravity from "./utils";
+import jump from "./movement";
 
 // Create a scene
 const scene = new THREE.Scene();
@@ -35,17 +36,18 @@ const movementSpeed = 0.1;
 // Define keyboard state
 const keyboard = {};
 
-// Define jump state
-let isJumping = false;
+// Define jump state as an object to enable changes made inside the jump function
+// to be reflected in the global state
+let isJumping = { value: false };
 
 // Listen for keyboard events
 document.addEventListener("keydown", (event) => {
   keyboard[event.key] = true;
   // Check if the spacebar is pressed and the player is not already jumping
   if (event.key === " ") {
-    if (!isJumping) {
-      isJumping = true;
-      jump(player);
+    if (!isJumping.value) {
+      isJumping.value = true;
+      jump(player, isJumping);
     }
   }
 });
@@ -74,34 +76,6 @@ function animate() {
 
   // Render the scene with the camera
   renderer.render(scene, camera);
-}
-
-// Define a jump function
-function jump(object) {
-  // Set the initial jump velocity
-  let jumpVelocity = 0.5;
-
-  // Define an update function to handle the jump animation
-  function update() {
-    // Apply the jump velocity to the player's Y position
-    object.position.y += jumpVelocity;
-
-    // Decrease the jump velocity to simulate gravity
-    jumpVelocity -= 0.01;
-
-    // Check if the player has landed on the platform
-    if (object.position.y <= 0.5) {
-      // Reset the player's Y position and jump flag
-      object.position.y = 0.5;
-      isJumping = false;
-    } else {
-      // If the player is still in the air, continue the jump animation
-      requestAnimationFrame(update);
-    }
-  }
-
-  // Start the jump animation
-  update();
 }
 
 // Start the animation loop
