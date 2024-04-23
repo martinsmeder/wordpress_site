@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import platform from "./platform";
 import player from "./player";
 import targetDummy from "./targetDummy";
@@ -23,9 +23,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Create controls
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true; // Optional: smooth camera movement
+// // Create controls
+// const controls = new OrbitControls(camera, renderer.domElement);
+// controls.enableDamping = true; // Optional: smooth camera movement
 
 // Add objects to the scene
 scene.add(platform);
@@ -79,8 +79,8 @@ function animate() {
   camera.position.copy(player.position).add(cameraOffset);
   camera.lookAt(player.position);
 
-  // Update controls
-  controls.update();
+  // // Update controls
+  // controls.update();
 
   // Render the scene with the camera
   renderer.render(scene, camera);
