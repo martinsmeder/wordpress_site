@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { World } from "./world";
+import { Player } from "./player";
+import { setupUI } from "./ui";
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer();
@@ -10,17 +12,17 @@ renderer.setClearColor(0x80a0e0);
 document.body.appendChild(renderer.domElement);
 
 // Camera setup
-const camera = new THREE.PerspectiveCamera(
+const orbitCamera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
 );
-camera.position.set(-32, 16, -32);
+orbitCamera.position.set(-20, 20, -20);
 
 // Controls setup
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(16, 0, 16);
+const controls = new OrbitControls(orbitCamera, renderer.domElement);
+controls.target.set(16, 16, 16);
 controls.update(); // Update due to manual changes above
 
 // Scene setup
@@ -28,6 +30,9 @@ const scene = new THREE.Scene();
 const world = new World();
 world.generate();
 scene.add(world);
+
+// Player
+const player = new Player(scene);
 
 function setupLights() {
   const light1 = new THREE.DirectionalLight();
@@ -44,17 +49,30 @@ function setupLights() {
 }
 
 // Render loop
+let previousTime = performance.now();
 function animate() {
+  let currentTime = performance.now();
+  let dt = (currentTime - previousTime) / 1000; // Delta time
+
   requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+  player.applyInputs(dt);
+  renderer.render(
+    scene,
+    player.controls.isLocked ? player.camera : orbitCamera
+  );
+
+  previousTime = currentTime;
 }
 
 // Setup window resizing
 window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
+  orbitCamera.aspect = window.innerWidth / window.innerHeight;
+  orbitCamera.updateProjectionMatrix();
+  player.camera.aspect = window.innerWidth / window.innerHeight;
+  player.camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
 setupLights();
+setupUI(player);
 animate();
