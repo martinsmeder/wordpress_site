@@ -3,12 +3,21 @@ import { World } from "./world";
 import { resources } from "./blocks";
 
 /**
- * Sets up the UI controls
+ *
  * @param {World} world
- * @param {Player} player
  */
-export function setupUI(world, player) {
+export function setupUI(world, player, physics) {
   const gui = new GUI();
+
+  const playerFolder = gui.addFolder("Player");
+  playerFolder.add(player, "maxSpeed", 1, 20, 0.1).name("Max Speed");
+  playerFolder.add(player, "jumpSpeed", 1, 10, 0.1).name("Jump Speed");
+  playerFolder.add(player.boundsHelper, "visible").name("Show Player Bounds");
+  playerFolder.add(player.cameraHelper, "visible").name("Show Camera Helper");
+
+  const physicsFolder = gui.addFolder("Physics");
+  physicsFolder.add(physics.helpers, "visible").name("Visualize Collisions");
+  physicsFolder.add(physics, "simulationRate", 10, 1000).name("Sim Rate");
 
   const worldFolder = gui.addFolder("World");
   worldFolder.add(world.size, "width", 8, 128, 1).name("Width");
@@ -30,23 +39,7 @@ export function setupUI(world, player) {
     scaleFolder.add(resource.scale, "z", 10, 100).name("Z Scale");
   }
 
-  const playerFolder = gui.addFolder("Player");
-  playerFolder.add(player, "maxSpeed", 1, 20, 0.1).name("Max Speed");
-  playerFolder.add(player.cameraHelper, "visible").name("Show Camera Helper");
-
-  gui.onChange(() => {
+  terrainFolder.onChange((event) => {
     world.generate();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    console.log(event);
-    if (event.code === "KeyU") {
-      console.log(gui._hidden);
-      if (gui._hidden) {
-        gui.show();
-      } else {
-        gui.hide();
-      }
-    }
   });
 }
