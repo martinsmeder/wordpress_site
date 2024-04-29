@@ -32,14 +32,14 @@ export class WorldChunk extends THREE.Group {
     this.initialize();
     this.generateResources(rng);
     this.generateTerrain(rng);
-    this.generateTrees(rng);
     this.generateClouds(rng);
+    this.generateTrees(rng);
     this.loadPlayerChanges();
     this.generateMeshes();
 
     this.loaded = true;
 
-    console.log(`Loaded chunk in ${performance.now() - start}ms`);
+    // console.log(`Loaded chunk in ${performance.now() - start}ms`);
   }
 
   /**
@@ -361,7 +361,7 @@ export class WorldChunk extends THREE.Group {
   removeBlock(x, y, z) {
     const block = this.getBlock(x, y, z);
     if (block && block.id !== blocks.empty.id) {
-      console.log(`Removing block at X:${x} Y:${y} Z:${z}`);
+      // console.log(`Removing block at X:${x} Y:${y} Z:${z}`);
       this.deleteBlockInstance(x, y, z);
       this.setBlockId(x, y, z, blocks.empty.id);
       this.dataStore.set(

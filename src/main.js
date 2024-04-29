@@ -33,15 +33,13 @@ controls.update();
 
 // Scene setup
 const scene = new THREE.Scene();
-const player = new Player(scene);
 const physics = new Physics(scene);
 const world = new World();
+const player = new Player(scene, world);
 scene.add(world);
 
-const modelLoader = new ModelLoader();
-modelLoader.loadModels((models) => {
-  // Add the pickaxe to the player
-  player.tool.setMesh(models.pickaxe);
+const modelLoader = new ModelLoader((models) => {
+  player.setTool(models.pickaxe);
 });
 
 const sun = new THREE.DirectionalLight();
@@ -82,32 +80,6 @@ window.addEventListener("resize", () => {
 const stats = new Stats();
 document.body.appendChild(stats.dom);
 
-// User input
-
-/**
- * Event handler for 'mousedown'' event
- * @param {MouseEvent} event
- */
-function onMouseDown(event) {
-  if (player.controls.isLocked && player.selectedCoords) {
-    if (player.activeBlockId !== blocks.empty.id) {
-      world.addBlock(
-        player.selectedCoords.x,
-        player.selectedCoords.y,
-        player.selectedCoords.z,
-        player.activeBlockId
-      );
-    } else {
-      world.removeBlock(
-        player.selectedCoords.x,
-        player.selectedCoords.y,
-        player.selectedCoords.z
-      );
-    }
-  }
-}
-document.addEventListener("mousedown", onMouseDown);
-
 // Render loop
 let previousTime = performance.now();
 function animate() {
@@ -124,7 +96,7 @@ function animate() {
 
   physics.update(dt, player, world);
   player.update(world);
-  world.update(player);
+  world.update(player.position);
   renderer.render(
     scene,
     player.controls.isLocked ? player.camera : orbitCamera
