@@ -6,6 +6,7 @@ import { Player } from "./player";
 import { Physics } from "./physics";
 import { setupUI } from "./ui";
 import { blocks } from "./blocks";
+import { ModelLoader } from "./modelLoader";
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer();
@@ -36,6 +37,12 @@ const player = new Player(scene);
 const physics = new Physics(scene);
 const world = new World();
 scene.add(world);
+
+const modelLoader = new ModelLoader();
+modelLoader.loadModels((models) => {
+  // Add the pickaxe to the player
+  player.tool.setMesh(models.pickaxe);
+});
 
 const sun = new THREE.DirectionalLight();
 sun.intensity = 1.5;

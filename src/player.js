@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
 import { World } from "./world";
 import { blocks } from "./blocks";
+import { Tool } from "./tool";
 
 const CENTER_SCREEN = new THREE.Vector2();
 
@@ -33,11 +34,15 @@ export class Player {
   selectedCoords = null;
   activeBlockid = blocks.dirt.id;
 
+  tool = new Tool();
+
   constructor(scene) {
     this.position.set(32, 32, 32);
     this.cameraHelper.visible = false;
     scene.add(this.camera);
     scene.add(this.cameraHelper);
+
+    this.camera.add(this.tool);
 
     // Set raycaster to use layer 0 so it doesn't interact with water mesh on layer 1
     this.raycaster.layers.set(0);
