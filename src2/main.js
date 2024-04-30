@@ -3,6 +3,8 @@ import Stats from "three/examples/jsm/libs/stats.module.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { World } from "./world";
 import { Player } from "./player";
+import { Physics } from "./physics";
+import { setupUI } from "./ui";
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer();
@@ -29,6 +31,7 @@ controls.update();
 // Scene setup
 const scene = new THREE.Scene();
 const player = new Player(scene);
+const physics = new Physics(scene);
 const world = new World();
 world.generate();
 scene.add(world);
@@ -77,7 +80,7 @@ function animate() {
   const currentTime = performance.now();
   const dt = (currentTime - previousTime) / 1000;
 
-  player.update(dt);
+  physics.update(dt, player, world);
   renderer.render(
     scene,
     player.controls.isLocked ? player.camera : orbitCamera
@@ -87,5 +90,6 @@ function animate() {
   previousTime = currentTime;
 }
 
+setupUI(world, player, physics);
 setupLighting();
 animate();
