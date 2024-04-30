@@ -13,14 +13,17 @@ export function setupUI(world, player, physics) {
   playerFolder.add(player, "jumpSpeed", 1, 10, 0.1).name("Jump Speed");
   playerFolder.add(player.boundsHelper, "visible").name("Show Player Bounds");
   playerFolder.add(player.cameraHelper, "visible").name("Show Camera Helper");
+  playerFolder.close();
 
   const physicsFolder = gui.addFolder("Physics");
   physicsFolder.add(physics.helpers, "visible").name("Visualize Collisions");
   physicsFolder.add(physics, "simulationRate", 10, 1000).name("Sim Rate");
+  physicsFolder.close();
 
   const worldFolder = gui.addFolder("World");
   worldFolder.add(world.size, "width", 8, 128, 1).name("Width");
   worldFolder.add(world.size, "height", 8, 32, 1).name("Height");
+  worldFolder.close();
 
   const terrainFolder = worldFolder.addFolder("Terrain");
   terrainFolder.add(world.params, "seed", 0, 10000, 1).name("Seed");
@@ -28,7 +31,7 @@ export function setupUI(world, player, physics) {
   terrainFolder.add(world.params.terrain, "magnitude", 0, 1).name("Magnitude");
   terrainFolder.add(world.params.terrain, "offset", 0, 1).name("Offset");
 
-  terrainFolder.onChange((event) => {
+  worldFolder.onChange((event) => {
     world.generate();
   });
 }
