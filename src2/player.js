@@ -20,11 +20,27 @@ export class Player {
   #worldVelocity = new THREE.Vector3();
   input = new THREE.Vector3();
 
+  tool = {
+    // Group that will contain the tool mesh
+    container: new THREE.Group(),
+    // Whether or not the tool is currently animating
+    animate: false,
+    // The time the animation was started
+    animationStart: 0,
+    // The rotation speed of the tool
+    animationSpeed: 0.025,
+    // Reference to the current animation
+    animation: null,
+  };
+
   constructor(scene) {
     this.position.set(32, 40, 32);
     this.cameraHelper.visible = false;
     scene.add(this.camera);
     scene.add(this.cameraHelper);
+
+    // The tool is parented to the camera
+    this.camera.add(this.tool.container);
 
     // Wireframe mesh visualizing the player's bounding cylinder
     this.boundsHelper = new THREE.Mesh(
@@ -37,6 +53,19 @@ export class Player {
     // Add event listeners for keyboard/mouse events
     document.addEventListener("keyup", this.onKeyUp.bind(this));
     document.addEventListener("keydown", this.onKeyDown.bind(this));
+    document.addEventListener("mousedown", this.onMouseDown.bind(this));
+  }
+
+  /**
+   * Updates the state of the player
+   * @param {World} world
+   */
+  update() {
+    this.updateBoundsHelper();
+
+    if (this.tool.animate) {
+      this.updateToolAnimation();
+    }
   }
 
   /**
@@ -61,6 +90,34 @@ export class Player {
   updateBoundsHelper() {
     this.boundsHelper.position.copy(this.camera.position);
     this.boundsHelper.position.y -= this.height / 2;
+  }
+
+  /**
+   * Set the tool object the player is holding
+   * @param {THREE.Mesh} tool
+   */
+  setTool(tool) {
+    this.tool.container.clear();
+    this.tool.container.add(tool);
+    this.tool.container.receiveShadow = true;
+    this.tool.container.castShadow = true;
+
+    this.tool.container.position.set(0.6, -0.3, -0.5);
+    this.tool.container.scale.set(0.5, 0.5, 0.5);
+    this.tool.container.rotation.z = Math.PI / 2;
+    this.tool.container.rotation.y = Math.PI + 2.1;
+  }
+
+  /**
+   * Animates the tool rotation
+   */
+  updateToolAnimation() {
+    if (this.tool.container.children.length > 0) {
+      const t =
+        this.tool.animationSpeed *
+        (performance.now() - this.tool.animationStart);
+      this.tool.container.children[0].rotation.z = 0.5 * Math.sin(t);
+    }
   }
 
   /**
@@ -151,6 +208,28 @@ export class Player {
           this.velocity.y += this.jumpSpeed;
         }
         break;
+    }
+  }
+
+  /**
+   * Event handler for 'mousedown'' event
+   * @param {MouseEvent} event
+   */
+  onMouseDown(event) {
+    if (this.controls.isLocked) {
+      // If the tool isn't currently animating, trigger the animation
+      if (!this.tool.animate) {
+        this.tool.animate = true;
+        this.tool.animationStart = performance.now();
+
+        // Clear the existing timeout so it doesn't cancel our new animation
+        clearTimeout(this.tool.animation);
+
+        // Stop the animation after 1.5 cycles
+        this.tool.animation = setTimeout(() => {
+          this.tool.animate = false;
+        }, (3 * Math.PI) / this.tool.animationSpeed);
+      }
     }
   }
 

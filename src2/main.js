@@ -5,6 +5,7 @@ import { World } from "./world";
 import { Player } from "./player";
 import { Physics } from "./physics";
 import { setupUI } from "./ui";
+import { ModelLoader } from "./modelLoader";
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer();
@@ -35,6 +36,10 @@ const physics = new Physics(scene);
 const world = new World();
 world.generate();
 scene.add(world);
+
+const modelLoader = new ModelLoader((models) => {
+  player.setTool(models.pickaxe);
+});
 
 function setupLighting() {
   const sun = new THREE.DirectionalLight();
@@ -81,6 +86,7 @@ function animate() {
   const dt = (currentTime - previousTime) / 1000;
 
   physics.update(dt, player, world);
+  player.update();
   renderer.render(
     scene,
     player.controls.isLocked ? player.camera : orbitCamera
