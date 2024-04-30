@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { SimplexNoise } from "three/examples/jsm/math/SimplexNoise.js";
 import { RNG } from "./rng";
-import { blocks, resources } from "./blocks.js";
+import { blocks } from "./blocks.js";
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 
@@ -39,7 +39,6 @@ export class World extends THREE.Group {
   generate() {
     const rng = new RNG(this.params.seed);
     this.initialize();
-    this.generateResources(rng);
     this.generateTerrain(rng);
     this.generateMeshes();
   }
@@ -62,31 +61,6 @@ export class World extends THREE.Group {
         slice.push(row);
       }
       this.data.push(slice);
-    }
-  }
-
-  /**
-   * Generates resources within the world
-   * @param {RNG} rng Random number generator
-   */
-  generateResources(rng) {
-    for (const resource of resources) {
-      const simplex = new SimplexNoise(rng);
-      for (let x = 0; x < this.size.width; x++) {
-        for (let y = 0; y < this.size.height; y++) {
-          for (let z = 0; z < this.size.width; z++) {
-            const n = simplex.noise3d(
-              x / resource.scale.x,
-              y / resource.scale.y,
-              z / resource.scale.z
-            );
-
-            if (n > resource.scarcity) {
-              this.setBlockId(x, y, z, resource.id);
-            }
-          }
-        }
-      }
     }
   }
 
