@@ -89,7 +89,8 @@ function animate() {
   player.update();
   renderer.render(
     scene,
-    player.controls.isLocked ? player.camera : orbitCamera
+    // player.controls.isLocked ? player.camera : orbitCamera
+    player.camera
   );
   stats.update();
 

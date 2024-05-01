@@ -8,7 +8,7 @@ export class ModelLoader {
   };
 
   constructor(onLoad) {
-    this.loader.load("pickaxe.glb", (model) => {
+    this.loader.load("sword.glb", (model) => {
       const mesh = model.scene;
       this.models.pickaxe = mesh;
       onLoad(this.models);

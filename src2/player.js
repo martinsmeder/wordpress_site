@@ -35,7 +35,7 @@ export class Player {
 
   constructor(scene) {
     this.position.set(32, 40, 32);
-    this.cameraHelper.visible = false;
+    this.cameraHelper.visible = true;
     scene.add(this.camera);
     scene.add(this.cameraHelper);
 
@@ -47,7 +47,7 @@ export class Player {
       new THREE.CylinderGeometry(this.radius, this.radius, this.height, 16),
       new THREE.MeshBasicMaterial({ wireframe: true })
     );
-    this.boundsHelper.visible = false;
+    this.boundsHelper.visible = true;
     scene.add(this.boundsHelper);
 
     // Add event listeners for keyboard/mouse events
@@ -102,10 +102,11 @@ export class Player {
     this.tool.container.receiveShadow = true;
     this.tool.container.castShadow = true;
 
-    this.tool.container.position.set(0.6, -0.3, -0.5);
-    this.tool.container.scale.set(0.5, 0.5, 0.5);
-    this.tool.container.rotation.z = Math.PI / 2;
-    this.tool.container.rotation.y = Math.PI + 2.1;
+    this.tool.container.position.set(0.18, -0.02, -0.5);
+    this.tool.container.scale.set(0.01, 0.01, 0.01);
+    this.tool.container.rotation.x = 2.2;
+    this.tool.container.rotation.y = -0.1;
+    this.tool.container.rotation.z = -1.5;
   }
 
   /**
@@ -116,7 +117,7 @@ export class Player {
       const t =
         this.tool.animationSpeed *
         (performance.now() - this.tool.animationStart);
-      this.tool.container.children[0].rotation.z = 0.5 * Math.sin(t);
+      this.tool.container.children[0].rotation.y = 0.5 * Math.sin(t);
     }
   }
 
