@@ -38,7 +38,7 @@ world.generate();
 scene.add(world);
 
 const modelLoader = new ModelLoader((models) => {
-  player.setTool(models.pickaxe);
+  player.setWeapon(models.sword);
 });
 
 function setupLighting() {

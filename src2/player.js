@@ -20,14 +20,14 @@ export class Player {
   #worldVelocity = new THREE.Vector3();
   input = new THREE.Vector3();
 
-  tool = {
-    // Group that will contain the tool mesh
+  weapon = {
+    // Group that will contain the weapon mesh
     container: new THREE.Group(),
-    // Whether or not the tool is currently animating
+    // Whether or not the weapon is currently animating
     animate: false,
     // The time the animation was started
     animationStart: 0,
-    // The rotation speed of the tool
+    // The rotation speed of the weapon
     animationSpeed: 0.025,
     // Reference to the current animation
     animation: null,
@@ -39,8 +39,8 @@ export class Player {
     scene.add(this.camera);
     scene.add(this.cameraHelper);
 
-    // The tool is parented to the camera
-    this.camera.add(this.tool.container);
+    // The weapon is parented to the camera
+    this.camera.add(this.weapon.container);
 
     // Wireframe mesh visualizing the player's bounding cylinder
     this.boundsHelper = new THREE.Mesh(
@@ -63,8 +63,8 @@ export class Player {
   update() {
     this.updateBoundsHelper();
 
-    if (this.tool.animate) {
-      this.updateToolAnimation();
+    if (this.weapon.animate) {
+      this.updateWeaponAnimation();
     }
   }
 
@@ -93,31 +93,31 @@ export class Player {
   }
 
   /**
-   * Set the tool object the player is holding
-   * @param {THREE.Mesh} tool
+   * Set the weapon object the player is holding
+   * @param {THREE.Mesh} weapon
    */
-  setTool(tool) {
-    this.tool.container.clear();
-    this.tool.container.add(tool);
-    this.tool.container.receiveShadow = true;
-    this.tool.container.castShadow = true;
+  setWeapon(weapon) {
+    this.weapon.container.clear();
+    this.weapon.container.add(weapon);
+    this.weapon.container.receiveShadow = true;
+    this.weapon.container.castShadow = true;
 
-    this.tool.container.position.set(0.18, -0.02, -0.5);
-    this.tool.container.scale.set(0.01, 0.01, 0.01);
-    this.tool.container.rotation.x = 2.2;
-    this.tool.container.rotation.y = -0.1;
-    this.tool.container.rotation.z = -1.5;
+    this.weapon.container.position.set(0.18, -0.02, -0.5);
+    this.weapon.container.scale.set(0.01, 0.01, 0.01);
+    this.weapon.container.rotation.x = 2.2;
+    this.weapon.container.rotation.y = -0.1;
+    this.weapon.container.rotation.z = -1.5;
   }
 
   /**
-   * Animates the tool rotation
+   * Animates the weapon rotation
    */
-  updateToolAnimation() {
-    if (this.tool.container.children.length > 0) {
+  updateWeaponAnimation() {
+    if (this.weapon.container.children.length > 0) {
       const t =
-        this.tool.animationSpeed *
-        (performance.now() - this.tool.animationStart);
-      this.tool.container.children[0].rotation.y = 0.5 * Math.sin(t);
+        this.weapon.animationSpeed *
+        (performance.now() - this.weapon.animationStart);
+      this.weapon.container.children[0].rotation.y = 0.5 * Math.sin(t);
     }
   }
 
@@ -218,18 +218,18 @@ export class Player {
    */
   onMouseDown(event) {
     if (this.controls.isLocked) {
-      // If the tool isn't currently animating, trigger the animation
-      if (!this.tool.animate) {
-        this.tool.animate = true;
-        this.tool.animationStart = performance.now();
+      // If the weapon isn't currently animating, trigger the animation
+      if (!this.weapon.animate) {
+        this.weapon.animate = true;
+        this.weapon.animationStart = performance.now();
 
         // Clear the existing timeout so it doesn't cancel our new animation
-        clearTimeout(this.tool.animation);
+        clearTimeout(this.weapon.animation);
 
         // Stop the animation after 1.5 cycles
-        this.tool.animation = setTimeout(() => {
-          this.tool.animate = false;
-        }, (3 * Math.PI) / this.tool.animationSpeed);
+        this.weapon.animation = setTimeout(() => {
+          this.weapon.animate = false;
+        }, (3 * Math.PI) / this.weapon.animationSpeed);
       }
     }
   }
