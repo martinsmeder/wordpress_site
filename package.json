@@ -1,18 +1,12 @@
 {
-  "name": "js_game",
+  "name": "wordpress_site",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "three": "^0.163.0"
-  },
-  "devDependencies": {
-    "vite": "^5.2.9"
-  }
+  "license": "ISC"
 }
