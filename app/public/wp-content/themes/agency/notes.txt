@@ -1,0 +1,13 @@
+================================== PHP basics ==================================
+Basic PHP Syntax: Variables, functions, loops, and conditionals.
+WordPress-Specific Functions: the_content(), the_title(), get_posts(), etc.
+Theme & Template Tags: Common tags like bloginfo(), wp_nav_menu(), and get_template_part().
+
+https://developer.wordpress.org/themes/
+https://developer.wordpress.org/plugins/
+
+=================================== Att göra ===================================
+1. Få Git att fungera
+2. Bygg MVP (experimentera eftersom) med bibehållet lugn
+3. Gör klart sidan med hosting och allt
+4. Finslipa i omgångar tills nöjd
