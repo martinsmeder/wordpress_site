@@ -5,7 +5,6 @@ app/public/.htaccess
 app/public/index.php
 app/public/license.txt
 app/public/local-xdebuginfo.php
-app/public/notes.txt
 app/public/readme.html
 app/public/wp-activate.php
 app/public/wp-blog-header.php
@@ -24,3 +23,4 @@ app/public/xmlrpc.php
 app/sql/
 conf/
 logs/
+notes.txt
