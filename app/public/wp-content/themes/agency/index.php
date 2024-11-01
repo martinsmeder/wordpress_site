@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 <body>
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
+    <?php get_header(); ?>
     
-    <p>Hi dad!</p>
-    <p><?php echo 'This is a theme for my ' . get_bloginfo('name') . '!' ?></p>
+    <main>
+        <p>Greetings!</p>
+        <p><?php echo 'This is a glorious custom theme for my ' . get_bloginfo('name') . '!' ?></p>
+    </main>
+
+    <?php get_footer(); ?>
 </body>
 </html>
