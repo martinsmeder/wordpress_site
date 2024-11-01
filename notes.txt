@@ -8,7 +8,7 @@ https://developer.wordpress.org/plugins/
 
 =================================== Att göra ===================================
 ---
-2. Bygg MVP (experimentera eftersom) med bibehållet lugn
+2. Bygg MVP (experimentera eftersom)
 3. Gör klart sidan med hosting och allt
 4. Finslipa i omgångar tills nöjd
 
