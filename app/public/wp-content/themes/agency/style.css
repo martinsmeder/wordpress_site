@@ -51,9 +51,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 100px 150px;
+    /* padding: 100px top/bottom, 150px left/right */
 }
+
 
 footer {
     background: green;
@@ -62,4 +65,9 @@ footer {
     padding: 10px;
     display: flex;
     justify-content: center;
+}
+
+#text {
+    font-size: large;
+    color: forestgreen;
 }

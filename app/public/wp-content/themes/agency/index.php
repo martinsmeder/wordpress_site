@@ -9,17 +9,7 @@
     <?php get_header(); ?>
     
     <main>
-        <?php 
-        if (have_posts()) : 
-            while (have_posts()) : 
-                the_post();
-                the_title(); // Displays the title from WordPress editor
-                the_content(); // Displays the content from WordPress editor
-            endwhile; 
-        else :
-            echo '<p>No content available.</p>'; 
-        endif; 
-        ?>
+        <?php display_content(); ?>
     </main>
 
     <?php get_footer(); ?>
