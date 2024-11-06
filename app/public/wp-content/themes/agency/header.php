@@ -1,6 +1,5 @@
 <header>
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
+    <h3><?php bloginfo('name'); ?></h3>
 
     <?php
     // Display the registered menu
@@ -10,4 +9,8 @@
         'container_class' => 'main-nav', // Adds a class to the <nav> element
     ));
     ?>
+
+   <div class="contact">
+        <a href="<?php echo site_url('/contact'); ?>">Contact Us</a>
+   </div> 
 </header>

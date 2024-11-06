@@ -19,29 +19,35 @@ body {
 }
 
 header {
-    background: green;
-    border-bottom: 1px solid #FFF;
     width: 100%;
-    padding: 10px;
+    padding: 30px 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
+}
+
+header .main-nav {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
     gap: 10px;
-    font-weight: bold;
+
 }
 
-header nav ul li a {
+header a {
     text-decoration: none;
-    color: #000;
+    font-weight: bold;
+    color: #FFF;
 }
 
-header nav ul li a:hover {
+header a:hover {
     color: #FFF;
 }
 
@@ -54,20 +60,13 @@ main {
     justify-content: flex-start;
     gap: 20px;
     padding: 100px 150px;
-    /* padding: 100px top/bottom, 150px left/right */
 }
 
 
 footer {
-    background: green;
     border-top: 1px solid #FFF;
     width: 100%;
     padding: 10px;
     display: flex;
     justify-content: center;
-}
-
-#text {
-    font-size: large;
-    color: forestgreen;
 }
