@@ -16,20 +16,30 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: "Roboto", sans-serif;
 }
 
 header {
     width: 100%;
-    padding: 30px 50px;
+    padding: 20px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
 }
 
+header .name-and-logo {
+    display: flex;
+    align-items: center;
+}
+
+header .name-and-logo img {
+    width: 40px;
+}
+
 header .main-nav {
     position: absolute;
-    top: 42px;
+    top: 40px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
