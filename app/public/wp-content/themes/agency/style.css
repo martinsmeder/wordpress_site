@@ -36,11 +36,12 @@ header .name-and-logo {
 
 header .name-and-logo img {
     width: 40px;
+    height: 40px;
 }
 
 header .main-nav {
     position: absolute;
-    top: 40px;
+    top: 43px;
     left: 50%;
     transform: translate(-50%, -50%);
 }

@@ -22,3 +22,15 @@ function display_content() {
     endif;
 }
 ?>
+
+<?php
+function agency_custom_logo_setup() {
+    add_theme_support('custom-logo', array(
+        'height'      => 40,  // Expected height
+        'width'       => 40, // Expected width
+        'flex-height' => true, // Flexible height
+        'flex-width'  => true, // Flexible width
+    ));
+}
+add_action('after_setup_theme', 'agency_custom_logo_setup');
+?>
