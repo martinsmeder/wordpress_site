@@ -1,12 +1,11 @@
 <header>
     <div class="name-and-logo"> 
-    
-    <?php 
+        <?php 
+        // Display logo from: appearance > customize > site identity
         if (function_exists('the_custom_logo')) {
             the_custom_logo();
         }
-    ?>
-        <!-- <img src="http://wordpress-site.local/wp-content/uploads/2024/11/glorious-software-logo.png" alt="Logo" class="header-logo" /> -->
+        ?>
         <h3><?php bloginfo('name'); ?></h3>    
     </div>
     
