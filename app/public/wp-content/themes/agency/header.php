@@ -1,5 +1,5 @@
 <header>
-    <div class="name-and-logo">
+    <div class="name-and-logo"> 
         <img src="http://wordpress-site.local/wp-content/uploads/2024/11/glorious-software-logo.png" alt="Logo" class="header-logo" />
         <h3><?php bloginfo('name'); ?></h3>    
     </div>
