@@ -44,23 +44,38 @@ header .main-nav {
     top: 43px;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: #1a1a1a;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
 }
 
-header nav ul {
+header .main-nav ul {
     list-style-type: none;
     display: flex;
-    gap: 10px;
+    gap: 30px;
 
 }
 
-header a {
+header .main-nav a {
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold; */
+    color: #acacac;
+}
+
+header .main-nav a:hover {
     color: #FFF;
 }
 
-header a:hover {
-    color: #FFF;
+header .contact {
+    padding: 10px 20px 10px 20px;
+    background: #FFF;
+    border-radius: 25px;
+}
+
+header .contact a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
 }
 
 main {
