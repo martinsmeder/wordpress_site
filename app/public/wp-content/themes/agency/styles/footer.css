@@ -1,0 +1,13 @@
+/*
+Theme Name: Agency
+Description: A simple custom theme.
+Version: 1.0
+*/
+
+footer {
+    border-top: 1px solid #FFF;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
