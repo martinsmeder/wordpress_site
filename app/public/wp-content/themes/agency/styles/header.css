@@ -7,7 +7,7 @@ Version: 1.0
 header {
     position: relative;
     width: 100%;
-    padding: 20px 50px;
+    padding: 30px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,11 +26,11 @@ header .name-and-logo img {
 
 header .main-nav {
     position: absolute;
-    top: 42px;
+    top: 52px;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #1a1a1a;
-    padding: 10px 20px 10px 20px;
+    padding: 15px 25px 15px 25px;
     border-radius: 25px;
 }
 
@@ -44,10 +44,17 @@ header .main-nav ul {
 header .main-nav a {
     text-decoration: none;
     color: #acacac;
+    padding: 5px;
 }
 
 header .main-nav a:hover {
     color: #FFF;
+}
+
+header .main-nav .current-menu-item a {
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 2px solid #FFF;
 }
 
 header .contact {
