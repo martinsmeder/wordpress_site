@@ -14,6 +14,10 @@ header {
     gap: 5px;
 }
 
+/* https://www.agency.se/ */
+
+/* =============================== Name and Logo =============================== */
+
 header .name-and-logo {
     display: flex;
     align-items: center;
@@ -23,6 +27,8 @@ header .name-and-logo img {
     width: 40px;
     height: 40px;
 }
+
+/* ============================== Main Navigation ============================== */
 
 header .main-nav {
     position: absolute;
@@ -59,6 +65,8 @@ header .main-nav .current-menu-item a {
     background: #3b3b3b;
 }
 
+/* ================================== Contact ================================== */
+
 header .contact {
     padding: 10px 20px 10px 20px;
     background: #FFF;
@@ -71,12 +79,69 @@ header .contact a {
     font-weight: bold;
 }
 
+/* =============================== Hamburger Menu ============================== */
+
 header .menu-icon {
     display: none;
     width: 30px;
+    cursor: pointer;
 }
 
-/* https://www.agency.se/ */
+/* =============================== Dropdown Menu =============================== */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #1a1a1a;
+    border-radius: 25px;
+    padding: 15px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.dropdown-menu ul li {
+    margin: 10px 0;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #acacac;
+    padding: 8px 20px;
+    border: 1px solid #1a1a1a;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.dropdown-menu a:hover {
+    color: #FFF;
+    background: #3b3b3b;
+}
+
+.dropdown-menu .contact-link {
+    margin-top: 10px;
+    display: inline-block;
+    background: #FFF;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.dropdown-menu .contact-link:hover {
+    background: #f0f0f0;
+}
+
+/* ================================ Media Queries ============================== */
 
 @media (max-width: 850px) {
     header .main-nav {

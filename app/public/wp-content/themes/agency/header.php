@@ -23,4 +23,15 @@
     </div> 
 
     <img src="<?php echo get_template_directory_uri(); ?>/images/hamburger-menu.png" class="menu-icon" alt="Hamburger Menu">
+
+    <div class="dropdown-menu">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'header-menu',
+            'container' => false,
+            'menu_class' => '', // Avoid extra styling
+        ));
+        ?>
+        <a href="<?php echo site_url('/contact'); ?>" class="contact-link">Contact Us</a>
+    </div>
 </header>
