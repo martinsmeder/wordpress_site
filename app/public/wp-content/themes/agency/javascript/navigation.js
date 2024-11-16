@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('.menu-icon');
     const dropdownMenu = document.querySelector('.dropdown-menu');
 
+    // Toggle the dropdown menu visibility
     menuIcon.addEventListener('click', () => {
-        // Toggle the dropdown menu visibility
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 

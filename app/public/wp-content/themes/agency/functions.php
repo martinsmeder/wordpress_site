@@ -41,7 +41,7 @@ add_action('wp_enqueue_scripts', 'enqueue_styles');
 add_filter('show_admin_bar', '__return_false'); // Hide invisible admin bar
 
 function enqueue_scripts() {
-    wp_enqueue_script('menu-toggle', get_template_directory_uri() . '/javascript/menu-toggle.js', array('jquery'), '1.0');
+    wp_enqueue_script('navigation', get_template_directory_uri() . '/javascript/navigation.js', array('jquery'), '1.0');
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
