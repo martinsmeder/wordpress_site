@@ -18,7 +18,9 @@
     ));
     ?>
 
-   <div class="contact">
-        <a href="<?php echo site_url('/contact'); ?>">Contact Us</a>
-   </div> 
+    <div class="contact">
+            <a href="<?php echo site_url('/contact'); ?>">Contact Us</a>
+    </div> 
+
+    <img src="<?php echo get_template_directory_uri(); ?>/images/hamburger-menu.png" class="menu-icon" alt="Hamburger Menu">
 </header>

@@ -71,6 +71,23 @@ header .contact a {
     font-weight: bold;
 }
 
+header .menu-icon {
+    display: none;
+    width: 30px;
+}
+
 /* https://www.agency.se/ */
 
-@media (max-width: 1250px) {}
+@media (max-width: 850px) {
+    header .main-nav {
+        display: none;
+    }
+
+    header .contact {
+        display: none;
+    }
+
+    header .menu-icon {
+        display: block;
+    }
+}
