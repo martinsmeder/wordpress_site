@@ -90,55 +90,45 @@ header .menu-icon {
 /* =============================== Dropdown Menu =============================== */
 
 .dropdown-menu {
+    width: 100%;
     display: none;
     position: absolute;
-    top: 52px;
+    top: 80px;
     left: 50%;
     transform: translate(-50%, 0);
-    background: #1a1a1a;
-    border-radius: 25px;
-    padding: 15px;
+    background: #000;
     z-index: 1000;
     text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .dropdown-menu ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: block;
-}
-
-.dropdown-menu ul li {
-    margin: 10px 0;
 }
 
 .dropdown-menu a {
     text-decoration: none;
-    color: #acacac;
-    padding: 8px 20px;
-    border: 1px solid #1a1a1a;
-    border-radius: 25px;
+    color: #FFF;
     display: inline-block;
+    padding: 10px;
+    width: 100%;
+}
+
+.dropdown-menu .current-menu-item a {
+    text-decoration: underline;
 }
 
 .dropdown-menu a:hover {
-    color: #FFF;
-    background: #3b3b3b;
-}
-
-.dropdown-menu .contact-link {
-    margin-top: 10px;
-    display: inline-block;
-    background: #FFF;
     color: #000;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
+    background: #FFF;
 }
 
-.dropdown-menu .contact-link:hover {
-    background: #f0f0f0;
+.dropdown-menu .contact {
+    display: inline-block;
+    background: transparent;
+    border-radius: 0px;
+    padding: 10px;
 }
 
 /* ================================ Media Queries ============================== */

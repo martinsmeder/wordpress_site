@@ -32,6 +32,6 @@
             'menu_class' => '', // Avoid extra styling
         ));
         ?>
-        <a href="<?php echo site_url('/contact'); ?>" class="contact-link">Contact Us</a>
+        <a href="<?php echo site_url('/contact'); ?>" class="contact">Contact Us</a>
     </div>
 </header>
