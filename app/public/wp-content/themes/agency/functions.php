@@ -1,8 +1,11 @@
 <?php
 
-// Register the primary navigation menu
+// Register navigation menus
 function register_my_menus() {
-    register_nav_menu('header-menu', __('Header Menu'));
+    register_nav_menus(array(
+        'header-menu' => __('Header Menu'),
+        'header-menu-mobile' => __('Header Menu Mobile'),
+    ));
 }
 add_action('init', 'register_my_menus');
 

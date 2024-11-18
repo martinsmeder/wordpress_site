@@ -117,18 +117,11 @@ header .menu-icon {
 
 .dropdown-menu .current-menu-item a {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .dropdown-menu a:hover {
-    color: #000;
-    background: #FFF;
-}
-
-.dropdown-menu .contact {
-    display: inline-block;
-    background: transparent;
-    border-radius: 0px;
-    padding: 10px;
+    background: #1a1a1a;
 }
 
 /* ================================ Media Queries ============================== */
@@ -144,5 +137,11 @@ header .menu-icon {
 
     header .menu-icon {
         display: block;
+    }
+}
+
+@media (min-width: 850px) {
+    .dropdown-menu {
+        display: none !important;
     }
 }

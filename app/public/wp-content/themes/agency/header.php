@@ -10,7 +10,7 @@
     </div>
     
     <?php
-    // Display the registered menu
+    // Display desktop menu
     wp_nav_menu(array(
         'theme_location' => 'header-menu',
         'container' => 'nav',          // Wraps the menu in a <nav> element
@@ -26,12 +26,12 @@
 
     <div class="dropdown-menu">
         <?php
+        // Dusplay mobile menu
         wp_nav_menu(array(
-            'theme_location' => 'header-menu',
+            'theme_location' => 'header-menu-mobile',
             'container' => false,
             'menu_class' => '', // Avoid extra styling
         ));
         ?>
-        <a href="<?php echo site_url('/contact'); ?>" class="contact">Contact Us</a>
     </div>
 </header>
