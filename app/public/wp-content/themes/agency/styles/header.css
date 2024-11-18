@@ -67,16 +67,24 @@ header .main-nav .current-menu-item a {
 
 /* ================================== Contact ================================== */
 
-header .contact {
+header .contact button {
     padding: 10px 20px 10px 20px;
     background: #FFF;
     border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: all .07s ease;
 }
 
-header .contact a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+header .contact button:hover {
+    text-decoration: underline;
+}
+
+header .contact button:active {
+    transform: scale(1.1);
 }
 
 /* =============================== Hamburger Menu ============================== */
