@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Match viewport to device's screen width to prevent automatic scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bloginfo: Pulls values from WordPress settings   -->
     <title><?php bloginfo('name'); ?></title> 
     <!-- Font -->
