@@ -48,5 +48,16 @@ function enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
+function mytheme_register_footer_widgets() {
+    register_sidebar([
+        'name'          => 'Footer Social Icons',
+        'id'            => 'footer-social-icons',
+        'before_widget' => '<div class="footer-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ]);
+}
+add_action('widgets_init', 'mytheme_register_footer_widgets');
 
 ?>

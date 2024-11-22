@@ -19,7 +19,9 @@
         </div>
         
         <div class="right">
-            <!-- Social icons  -->
+            <?php if (is_active_sidebar('footer-social-icons')) : ?>
+                <?php dynamic_sidebar('footer-social-icons'); ?>
+            <?php endif; ?>
         </div>
     </div>
     

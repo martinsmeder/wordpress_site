@@ -5,9 +5,22 @@ Version: 1.0
 */
 
 footer {
-    border-top: 1px solid #FFF;
     width: 100%;
     padding: 10px;
+}
+
+footer .bottom {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .bottom .right a {
+    text-decoration: none;
+    padding: 2px;
+}
+
+.footer-widget img {
+    width: 20px;
 }
