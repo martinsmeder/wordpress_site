@@ -6,7 +6,30 @@ Version: 1.0
 
 footer {
     width: 100%;
-    padding: 10px;
+    padding: 50px;
+}
+
+footer .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .top .right {
+    padding-top: 10px;
+}
+
+footer .top .right ul {
+    list-style: none;
+    padding-top: 4px;
+}
+
+footer .top .right ul li {
+    padding-top: 7px;
+}
+
+footer .top .right a {
+    text-decoration: none;
+    color: #acacac;
 }
 
 footer .bottom {
@@ -14,6 +37,9 @@ footer .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #acacac;
 }
 
 footer .bottom .right a {
@@ -21,6 +47,15 @@ footer .bottom .right a {
     padding: 2px;
 }
 
+footer .name-and-logo {
+    margin-left: -10px;
+}
+
+footer p {
+    color: #acacac;
+}
+
 .footer-widget img {
     width: 20px;
+    margin-top: 5px;
 }

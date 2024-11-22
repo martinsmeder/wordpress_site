@@ -26,7 +26,7 @@
 
     <div class="dropdown-menu">
         <?php
-        // Dusplay mobile menu
+        // Display mobile menu
         wp_nav_menu(array(
             'theme_location' => 'header-menu-mobile',
             'container' => false,

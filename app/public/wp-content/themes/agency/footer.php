@@ -1,16 +1,37 @@
 <footer>
     <!-- Note: Should be customizable. -->
 
-    <div class="top-left">
-        <!-- Company icon + company name -->
-        <!-- Fake address  -->
-    </div>
+    <div class="top">
+        <div class="left">
+            <div class="name-and-logo">
+                <?php 
+                // Display logo from: appearance > customize > site identity
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+                ?>
+                <h3><?php bloginfo('name'); ?></h3>
+            </div>
+            
+            <div class="address">
+                <p>1234 Fake Street</p>
+                <p>Fake City, IL 00000</p>
+                <p>Fake Country</p>
+            </div>
+            
+        </div>
 
-    <div class="top-right">
-        <!-- Home -->
-        <!-- About us -->
-        <!-- Projects -->
-        <!-- Contact us -->
+        <div class="right">
+            <h3>Navigation</h3>
+            <?php
+                // Display mobile menu
+                wp_nav_menu(array(
+                    'theme_location' => 'header-menu-mobile',
+                    'container' => false,
+                    'menu_class' => '', // Avoid extra styling
+                ));
+            ?>
+        </div>
     </div>
 
     <div class="bottom">
@@ -26,3 +47,4 @@
     </div>
     
 </footer>
+

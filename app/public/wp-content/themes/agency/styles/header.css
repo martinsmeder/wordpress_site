@@ -18,12 +18,12 @@ header {
 
 /* =============================== Name and Logo =============================== */
 
-header .name-and-logo {
+.name-and-logo {
     display: flex;
     align-items: center;
 }
 
-header .name-and-logo img {
+.name-and-logo img {
     width: 40px;
     height: 40px;
 }
