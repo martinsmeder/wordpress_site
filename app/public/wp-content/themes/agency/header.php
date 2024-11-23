@@ -22,7 +22,7 @@
         <button onclick="window.location.href='<?php echo site_url('/contact'); ?>'">Contact Us</button>
     </div>
 
-    <img src="<?php echo get_template_directory_uri(); ?>/images/hamburger-menu.png" class="menu-icon" alt="Menu">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/menu-icons/hamburger-menu.png" class="menu-icon" alt="Menu">
 
     <div class="dropdown-menu">
         <?php

@@ -5,11 +5,15 @@ Version: 1.0
 */
 
 header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, black 100%),
+        url('../images/backgrounds/dark-tunnel-gradient.png') no-repeat center center;
+    height: 350px;
+    background-size: cover;
     position: relative;
     width: 100%;
     padding: 30px 50px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 5px;
 }
@@ -116,7 +120,7 @@ header .menu-icon {
     top: 80px;
     left: 0;
     transform: translate(-50%, 0);
-    background: #000;
+    background: transparent;
     z-index: 1000;
     text-align: center;
     padding: 10px 0px 10px 0px;
@@ -144,7 +148,7 @@ header .menu-icon {
 }
 
 .dropdown-menu a:hover {
-    background: #1a1a1a;
+    text-decoration: underline;
 }
 
 /* ================================ Media Queries ============================== */
@@ -174,6 +178,7 @@ header .menu-icon {
     header {
         flex-direction: column;
         align-items: center;
+        justify-content: start;
     }
 
     header .name-and-logo {
@@ -181,5 +186,4 @@ header .menu-icon {
         text-align: center;
         padding-bottom: 10px;
     }
-
 }
