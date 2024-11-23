@@ -23,3 +23,9 @@ html {
     overflow-y: scroll;
     /* Prevent main-nav from getting pushed to the side when clicking on it's links */
 }
+
+@media (max-width: 325px) {
+    body {
+        overflow: hidden;
+    }
+}

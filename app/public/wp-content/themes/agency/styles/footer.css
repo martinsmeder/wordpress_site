@@ -9,9 +9,19 @@ footer {
     padding: 50px;
 }
 
+footer p {
+    color: #acacac;
+}
+
+/* ================================== Top ======================================= */
+
 footer .top {
     display: flex;
     justify-content: space-between;
+}
+
+footer .top .left .name-and-logo {
+    margin-left: -10px;
 }
 
 footer .top .right {
@@ -32,6 +42,21 @@ footer .top .right a {
     color: #acacac;
 }
 
+footer .top .right a:hover {
+    color: #FFF;
+}
+
+footer .top .right ul li.current-menu-item {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+footer .top .right ul li.current-menu-item a {
+    color: #FFF;
+}
+
+/* ================================= Bottom ===================================== */
+
 footer .bottom {
     width: 100%;
     display: flex;
@@ -47,15 +72,30 @@ footer .bottom .right a {
     padding: 2px;
 }
 
-footer .name-and-logo {
-    margin-left: -10px;
-}
-
-footer p {
-    color: #acacac;
-}
-
-.footer-widget img {
+footer .bottom .right .footer-widget img {
     width: 20px;
     margin-top: 5px;
+}
+
+/* ============================= Media Queries ================================== */
+
+@media (max-width: 500px) {
+    footer .bottom {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    footer .bottom .right {
+        order: 1;
+    }
+
+    footer .bottom .left {
+        order: 2;
+    }
+}
+
+@media (max-width: 425px) {
+    footer .top {
+        flex-direction: column;
+    }
 }
