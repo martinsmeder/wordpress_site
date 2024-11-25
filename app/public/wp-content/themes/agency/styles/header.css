@@ -6,8 +6,8 @@ Version: 1.0
 
 header {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, black 100%),
-        url('../images/backgrounds/dark-tunnel-gradient.png') no-repeat center center;
-    height: 350px;
+        url('../images/backgrounds/dark-tech.jpg') no-repeat top center;
+    height: 300px;
     background-size: cover;
     position: relative;
     width: 100%;
