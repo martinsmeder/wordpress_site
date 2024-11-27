@@ -19,7 +19,41 @@
     <?php get_header(); ?>
     
     <main>
-        <?php display_content(); ?>
+    <?php
+    if (is_front_page()) { 
+        $headline = get_post_meta(get_the_ID(), 'headline', true) ?: 'Default Headline';
+        $subtext = get_post_meta(get_the_ID(), 'subtext', true) ?: 'Default Subtext';
+        $cta_text = get_post_meta(get_the_ID(), 'cta_text', true) ?: 'Default CTA Text';
+        $cta_link = get_post_meta(get_the_ID(), 'cta_link', true) ?: '#';
+    ?>
+        <section class="hero">
+            <h1><?php echo esc_html($headline); ?></h1>
+            <p><?php echo esc_html($subtext); ?></p>
+            <a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
+                <?php echo esc_html($cta_text); ?>
+            </a>
+        </section>
+
+        <section class="visuals">
+        <!-- Add visuals: A clean hero image or graphic showcasing a website design.  -->
+        </section>
+
+       
+    <?php
+    } else {
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+    ?>
+                <section class="page-content">
+                    <h1><?php the_title(); ?></h1>
+                    <div><?php the_content(); ?></div>
+                </section>
+    <?php
+            }
+        }
+    }
+    ?>
     </main>
 
     <?php get_footer(); ?>
