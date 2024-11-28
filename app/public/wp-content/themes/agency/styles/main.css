@@ -12,5 +12,13 @@ main {
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
-    padding: 100px 150px;
+}
+
+main .hero {
+    width: 100%;
+    padding: 0px 50px;
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
