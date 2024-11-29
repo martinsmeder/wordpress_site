@@ -20,5 +20,57 @@ main .hero {
     height: 63vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+}
+
+main .hero .intro {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+main .hero .intro h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+main .hero .intro p {
+    font-size: 1rem;
+    text-align: center;
+    color: #acacac;
+}
+
+main .hero .intro button {
+    background: #000;
+    color: #FFF;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #FFF;
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .07s ease;
+}
+
+main .hero .intro button:hover {
+    text-decoration: underline;
+}
+
+
+main .hero .intro button:active {
+    transform: scale(1.1);
+}
+
+main .hero .arrow {
+    padding: 20px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+}
+
+main .hero .arrow img {
+    width: 40px;
 }

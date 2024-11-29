@@ -27,16 +27,19 @@
         $cta_link = get_post_meta(get_the_ID(), 'cta_link', true) ?: '#';
     ?>
         <section class="hero">
-            <div class="top">
+            <div class="intro">
                 <h1><?php echo esc_html($headline); ?></h1>
+                <p><?php echo esc_html($subtext); ?></p>
                 <button class="cta-button" onclick="window.location.href='<?php echo esc_url($cta_link); ?>';">
                     <?php echo esc_html($cta_text); ?>
                 </button>
             </div>
             
-            <div class="botton">
-                <p><?php echo esc_html($subtext); ?></p>
-            </div>
+           <div class="arrow">
+           <img src="<?php echo get_template_directory_uri(); ?>/images/misc-icons/arrow.png" class="arrow-icon" alt="Down Arrow">
+           </div>
+                
+   
             
             
         </section>
