@@ -16,7 +16,7 @@ main {
 
 main .hero {
     width: 100%;
-    padding: 0px 50px;
+    /* padding: 0px 50px; */
     height: 63vh;
     display: flex;
     flex-direction: column;
@@ -47,6 +47,7 @@ main .hero .intro button {
     background: #000;
     color: #FFF;
     margin-top: 20px;
+    margin-bottom: 30px;
     padding: 10px;
     border: 1px solid #FFF;
     border-radius: 25px;
