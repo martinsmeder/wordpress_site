@@ -38,14 +38,23 @@
            <div class="arrow">
            <img src="<?php echo get_template_directory_uri(); ?>/images/misc-icons/arrow.png" class="arrow-icon" alt="Down Arrow">
            </div>
-                
-   
-            
-            
         </section>
 
         <section class="visuals">
-        <!-- Add visuals: A clean hero image or graphic showcasing a website design.  -->
+            <div class="description">
+                <h1>A Quick Taste: The Aggregator</h1>
+                <p>An aggregator app featuring AI-generated summaries of emerging technologies, technology-related news and a line chart displaying job trends.</p>
+            </div>
+
+            <button class="projects-button" onclick="window.location.href='<?php echo esc_url('/projects'); ?>';">
+                    <?php echo esc_html('View more work'); ?>
+            </button>
+
+            <div class="images">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/summaries.png" class="summaries" alt="Summaries">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/news.png" class="news" alt="News">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/jobs.png" class="jobs" alt="Jobs">
+            </div>
         </section>
 
        
