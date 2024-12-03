@@ -101,16 +101,13 @@ main .visuals .description {
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
-}
-
-main .visuals .description p {
     text-align: center;
 }
 
 main .visuals button {
     background: #FFF;
     color: #000;
-    padding: 7px;
+    padding: 5px 7px;
     border: 1px solid #FFF;
     border-radius: 25px;
     font-family: "Roboto", sans-serif;
@@ -163,6 +160,10 @@ main .visuals .images img {
 }
 
 @media (max-width: 525px) {
+    main .visuals .description {
+        width: 80%;
+    }
+
     main .visuals .images img {
         width: 400px;
     }
@@ -175,6 +176,19 @@ main .visuals .images img {
 }
 
 @media (max-width: 325px) {
+    main .hero .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    main .hero .arrow,
+    main .hero .intro button {
+        transform: scale(0.8);
+    }
+
+    main .visuals button {
+        transform: scale(0.8);
+    }
+
     main .visuals .images img {
         width: 200px;
     }
