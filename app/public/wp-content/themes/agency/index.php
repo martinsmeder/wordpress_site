@@ -36,7 +36,7 @@
             </div>
             
            <div class="arrow">
-           <img src="<?php echo get_template_directory_uri(); ?>/images/misc-icons/arrow.png" class="arrow-icon" alt="Down Arrow">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/misc-icons/arrow.png" class="arrow-icon" alt="Down Arrow">
            </div>
         </section>
 
