@@ -1,0 +1,23 @@
+/*
+Theme Name: Agency
+Description: A simple custom theme.
+Version: 1.0
+*/
+
+/* Styles specific to the Test Page */
+.test-content {
+    background-color: #0088ff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.test-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.test-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
