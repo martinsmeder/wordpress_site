@@ -13,14 +13,12 @@
     <?php 
     wp_head(); 
     ?>
-
 </head>
 <body>
     <?php get_header(); ?>
     
     <main>
     <?php
-    if (is_front_page()) { 
         $headline = get_post_meta(get_the_ID(), 'headline', true) ?: 'Default Headline';
         $subtext = get_post_meta(get_the_ID(), 'subtext', true) ?: 'Default Subtext';
         $cta_text = get_post_meta(get_the_ID(), 'cta_text', true) ?: 'Default CTA Text';
@@ -56,23 +54,6 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/jobs.png" class="jobs" alt="Jobs">
             </div>
         </section>
-
-       
-    <?php
-    } else {
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post();
-    ?>
-                <section class="page-content">
-                    <h1><?php the_title(); ?></h1>
-                    <div><?php the_content(); ?></div>
-                </section>
-    <?php
-            }
-        }
-    }
-    ?>
     </main>
 
     <?php get_footer(); ?>

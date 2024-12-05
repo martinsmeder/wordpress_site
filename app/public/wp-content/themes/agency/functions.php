@@ -42,7 +42,9 @@ function enqueue_styles() {
 
     // Enqueue specific styles
     wp_enqueue_style('main', get_template_directory_uri() . '/styles/main.css', array(), '1.0');
-    wp_enqueue_style('test', get_template_directory_uri() . '/styles/test.css', array(), '1.0');
+    wp_enqueue_style('page-projects', get_template_directory_uri() . '/styles/page-projects.css', array(), '1.0');
+    wp_enqueue_style('page-about-us', get_template_directory_uri() . '/styles/page-about-us.css', array(), '1.0');
+    wp_enqueue_style('page-contact', get_template_directory_uri() . '/styles/page-contact.css', array(), '1.0');
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 add_filter('show_admin_bar', '__return_false'); // Hide invisible admin bar

@@ -1,0 +1,23 @@
+/*
+Theme Name: Agency
+Description: A simple custom theme.
+Version: 1.0
+*/
+
+/* Styles specific to the Contact Page */
+.contact-content {
+    background-color: #0026ff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}

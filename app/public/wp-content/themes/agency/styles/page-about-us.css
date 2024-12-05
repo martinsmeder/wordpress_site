@@ -1,0 +1,23 @@
+/*
+Theme Name: Agency
+Description: A simple custom theme.
+Version: 1.0
+*/
+
+/* Styles specific to the Something Page */
+.about-us-content {
+    background-color: #ff0000;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-us-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about-us-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}

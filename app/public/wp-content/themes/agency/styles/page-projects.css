@@ -4,20 +4,20 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-/* Styles specific to the Test Page */
-.test-content {
-    background-color: #0088ff;
+/* Styles specific to the Projects Page */
+.projects-content {
+    background-color: #00ff15;
     color: #333;
     padding: 20px;
     text-align: center;
 }
 
-.test-content h1 {
+.projects-content h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.test-content p {
+.projects-content p {
     font-size: 1.2rem;
     line-height: 1.6;
 }

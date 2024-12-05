@@ -16,13 +16,13 @@
 </head>
 <body>
     <?php
-    /* Template Name: Test Page */
+    /* Template Name: About Us */
     get_header(); 
     ?>
 
     <main>
-        <section class="test-content">
-            <h1>Welcome to the Test Page</h1>
+        <section class="about-us-content">
+            <h1>Welcome to about us</h1>
             <p>This is a custom template with its own styles.</p>
 
             <hr>
