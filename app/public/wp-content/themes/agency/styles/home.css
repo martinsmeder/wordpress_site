@@ -4,7 +4,7 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-main {
+.home {
     flex: 1;
     width: 100%;
     display: flex;
@@ -16,7 +16,7 @@ main {
 
 /* =================================== Hero ===================================== */
 
-main .hero {
+.home .hero {
     background:
         linear-gradient(to top, rgba(0, 0, 0, 0) 80%, black 100%),
         linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%),
@@ -32,7 +32,7 @@ main .hero {
     justify-content: space-between;
 }
 
-main .hero .intro {
+.home .hero .intro {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -40,18 +40,18 @@ main .hero .intro {
     gap: 10px;
 }
 
-main .hero .intro h1 {
+.home .hero .intro h1 {
     font-size: 5rem;
     text-align: center;
 }
 
-main .hero .intro p {
+.home .hero .intro p {
     font-size: 1rem;
     text-align: center;
     color: #FFF;
 }
 
-main .hero .intro button {
+.home .hero .intro button {
     background: #000;
     color: #FFF;
     margin-top: 20px;
@@ -65,16 +65,16 @@ main .hero .intro button {
     transition: all .07s ease;
 }
 
-main .hero .intro button:hover {
+.home .hero .intro button:hover {
     text-decoration: underline;
 }
 
 
-main .hero .intro button:active {
+.home .hero .intro button:active {
     transform: scale(1.1);
 }
 
-main .hero .arrow {
+.home .hero .arrow {
     padding: 20px;
     border: 1px solid #FFF;
     border-radius: 50%;
@@ -82,19 +82,19 @@ main .hero .arrow {
     margin-bottom: 50px;
 }
 
-main .hero .arrow img {
+.home .hero .arrow img {
     width: 40px;
 }
 
 /* ================================== Visuals =================================== */
 
-main .visuals {
+.home .visuals {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main .visuals .description {
+.home .visuals .description {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ main .visuals .description {
     text-align: center;
 }
 
-main .visuals button {
+.home .visuals button {
     background: #FFF;
     color: #000;
     padding: 5px 7px;
@@ -117,15 +117,15 @@ main .visuals button {
     transition: all .07s ease;
 }
 
-main .visuals button:hover {
+.home .visuals button:hover {
     text-decoration: underline;
 }
 
-main .visuals button:active {
+.home .visuals button:active {
     transform: scale(1.1);
 }
 
-main .visuals .images {
+.home .visuals .images {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@ main .visuals .images {
     gap: 20px;
 }
 
-main .visuals .images img {
+.home .visuals .images img {
     width: 900px;
     border: 1px solid #FFF;
     border-radius: 20px;
@@ -142,54 +142,54 @@ main .visuals .images img {
 /* =============================== Media Queries ================================ */
 
 @media (max-width: 950px) {
-    main .visuals .images img {
+    .home .visuals .images img {
         width: 700px;
     }
 }
 
 @media (max-width: 800px) {
-    main .hero .intro h1 {
+    .home .hero .intro h1 {
         font-size: 3.5rem;
     }
 }
 
 @media (max-width: 750px) {
-    main .visuals .images img {
+    .home .visuals .images img {
         width: 500px;
     }
 }
 
 @media (max-width: 525px) {
-    main .visuals .description {
+    .home .visuals .description {
         width: 80%;
     }
 
-    main .visuals .images img {
+    .home .visuals .images img {
         width: 400px;
     }
 }
 
 @media (max-width: 425px) {
-    main .visuals .images img {
+    .home .visuals .images img {
         width: 300px;
     }
 }
 
 @media (max-width: 325px) {
-    main .hero .intro h1 {
+    .home .hero .intro h1 {
         font-size: 2.5rem;
     }
 
-    main .hero .arrow,
-    main .hero .intro button {
+    .home .hero .arrow,
+    .home .hero .intro button {
         transform: scale(0.8);
     }
 
-    main .visuals button {
+    .home .visuals button {
         transform: scale(0.8);
     }
 
-    main .visuals .images img {
+    .home .visuals .images img {
         width: 200px;
     }
 }

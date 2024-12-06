@@ -17,12 +17,19 @@
 <body>
     <?php get_header(); ?>
     
-    <main>
+    <main class="home">
     <?php
+        // Hero section
         $headline = get_post_meta(get_the_ID(), 'headline', true) ?: 'Default Headline';
         $subtext = get_post_meta(get_the_ID(), 'subtext', true) ?: 'Default Subtext';
         $cta_text = get_post_meta(get_the_ID(), 'cta_text', true) ?: 'Default CTA Text';
         $cta_link = get_post_meta(get_the_ID(), 'cta_link', true) ?: '#';
+
+        // Visuals section
+        $visuals_heading = get_post_meta(get_the_ID(), 'visuals_heading', true) ?: 'Default Visuals Heading';
+        $visuals_description = get_post_meta(get_the_ID(), 'visuals_description', true) ?: 'Default Visuals Description';
+        $visuals_button_text = get_post_meta(get_the_ID(), 'visuals_button_text', true) ?: 'Default Visuals Button Text';
+        $visuals_button_link = get_post_meta(get_the_ID(), 'visuals_button_link', true) ?: '#';
     ?>
         <section class="hero">
             <div class="intro">
@@ -40,12 +47,12 @@
 
         <section class="visuals">
             <div class="description">
-                <h1>A Quick Taste: The Aggregator</h1>
-                <p>An aggregator app featuring AI-generated summaries of emerging technologies, technology-related news and a line chart displaying job trends.</p>
+                <h1><?php echo esc_html($visuals_heading); ?></h1>
+                <p><?php echo esc_html($visuals_description); ?></p>
             </div>
 
-            <button class="projects-button" onclick="window.location.href='<?php echo esc_url('/projects'); ?>';">
-                    <?php echo esc_html('View more work'); ?>
+            <button class="projects-button" onclick="window.location.href='<?php echo esc_url($visuals_button_link); ?>';">
+                    <?php echo esc_html($visuals_button_text); ?>
             </button>
 
             <div class="images">
@@ -59,3 +66,4 @@
     <?php get_footer(); ?>
 </body>
 </html>
+

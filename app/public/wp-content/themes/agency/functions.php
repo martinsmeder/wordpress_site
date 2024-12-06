@@ -41,7 +41,7 @@ function enqueue_styles() {
     wp_enqueue_style('footer', get_template_directory_uri() . '/styles/footer.css', array(), '1.0');
 
     // Enqueue specific styles
-    wp_enqueue_style('main', get_template_directory_uri() . '/styles/main.css', array(), '1.0');
+    wp_enqueue_style('home', get_template_directory_uri() . '/styles/home.css', array(), '1.0');
     wp_enqueue_style('page-projects', get_template_directory_uri() . '/styles/page-projects.css', array(), '1.0');
     wp_enqueue_style('page-about-us', get_template_directory_uri() . '/styles/page-about-us.css', array(), '1.0');
     wp_enqueue_style('page-contact', get_template_directory_uri() . '/styles/page-contact.css', array(), '1.0');
