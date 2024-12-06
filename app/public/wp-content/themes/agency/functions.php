@@ -66,4 +66,45 @@ function mytheme_register_footer_widgets() {
 }
 add_action('widgets_init', 'mytheme_register_footer_widgets');
 
+function visuals_customizer($wp_customize) {
+    $wp_customize->add_section('visuals_section', array(
+        'title'    => __('Visuals Section', 'theme-textdomain'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('visuals_image1');
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        'visuals_image1',
+        array(
+            'label'    => __('First Image', 'theme-textdomain'),
+            'section'  => 'visuals_section',
+            'settings' => 'visuals_image1',
+        )
+    ));
+
+    $wp_customize->add_setting('visuals_image2');
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        'visuals_image2',
+        array(
+            'label'    => __('Second Image', 'theme-textdomain'),
+            'section'  => 'visuals_section',
+            'settings' => 'visuals_image2',
+        )
+    ));
+
+    $wp_customize->add_setting('visuals_image3');
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        'visuals_image3',
+        array(
+            'label'    => __('Third Image', 'theme-textdomain'),
+            'section'  => 'visuals_section',
+            'settings' => 'visuals_image3',
+        )
+    ));
+}
+add_action('customize_register', 'visuals_customizer');
+
 ?>

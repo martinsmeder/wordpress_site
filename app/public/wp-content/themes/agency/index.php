@@ -52,13 +52,21 @@
             </div>
 
             <button class="projects-button" onclick="window.location.href='<?php echo esc_url($visuals_button_link); ?>';">
-                    <?php echo esc_html($visuals_button_text); ?>
+                <?php echo esc_html($visuals_button_text); ?>
             </button>
 
             <div class="images">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/summaries.png" class="summaries" alt="Summaries">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/news.png" class="news" alt="News">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/screenshots/jobs.png" class="jobs" alt="Jobs">
+                <?php if ($image1 = get_theme_mod('visuals_image1')): ?>
+                    <img src="<?php echo esc_url($image1); ?>" class="visual-image" alt="Image 1">
+                <?php endif; ?>
+
+                <?php if ($image2 = get_theme_mod('visuals_image2')): ?>
+                    <img src="<?php echo esc_url($image2); ?>" class="visual-image" alt="Image 2">
+                <?php endif; ?>
+
+                <?php if ($image3 = get_theme_mod('visuals_image3')): ?>
+                    <img src="<?php echo esc_url($image3); ?>" class="visual-image" alt="Image 3">
+                <?php endif; ?>
             </div>
         </section>
     </main>
