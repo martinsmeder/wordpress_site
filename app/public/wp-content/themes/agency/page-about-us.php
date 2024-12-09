@@ -20,14 +20,8 @@
     get_header(); 
     ?>
 
-    <main>
+    <main class="about-us-wrapper">
         <section class="about-us-content">
-            <h1>Welcome to about us</h1>
-            <p>This is a custom template with its own styles.</p>
-
-            <hr>
-            <!-- ====================== Or ========================= -->
-            <h1><?php the_title(); ?></h1>
             <div><?php the_content(); ?></div>
         </section>
     </main>

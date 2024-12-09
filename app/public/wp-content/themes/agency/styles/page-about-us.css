@@ -4,20 +4,38 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-/* Styles specific to the Something Page */
+.about-us-wrapper {
+    margin: 0 auto;
+    background:
+        linear-gradient(to top, rgba(0, 0, 0, 0) 80%, black 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 0) 50%, black 100%),
+        linear-gradient(to left, rgba(0, 0, 0, 0) 50%, black 100%),
+        url('../images/backgrounds/waves.jpg') no-repeat center center;
+}
+
 .about-us-content {
-    background-color: #ff0000;
-    color: #333;
-    padding: 20px;
-    text-align: center;
+    padding-top: 25px;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .about-us-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
 }
 
-.about-us-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.wp-block-list {
+    padding-left: 25px;
+}
+
+@media (max-width: 800px) {
+    .about-us-content {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-us-content h1 {
+        font-size: 2rem;
+    }
 }
