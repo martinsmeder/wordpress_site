@@ -4,20 +4,11 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-/* Styles specific to the Projects Page */
-.projects-content {
-    background-color: #00ff15;
-    color: #333;
-    padding: 20px;
-    text-align: center;
+.card {
+    display: flex;
+    align-items: center;
 }
 
-.projects-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.projects-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.card img {
+    width: 400px;
 }

@@ -20,15 +20,61 @@
     get_header(); 
     ?>
 
-    <main>
+    <main class="projects-wrapper">
         <section class="projects-content">
-            <h1>Welcome to projects</h1>
-            <p>This is a custom template with its own styles.</p>
-
-            <hr>
-            <!-- ====================== Or ========================= -->
-            <h1><?php the_title(); ?></h1>
-            <div><?php the_content(); ?></div>
+            <h1>
+                <!-- Custom field for heading -->
+            </h1>
+            <div class="cards-list">
+                <div class="card">
+                    <?php if ($image1 = get_theme_mod('projects_image1')): ?>
+                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 1">
+                    <?php endif; ?>
+                    <div class="info">
+                        <p>Description 1</p>
+                        <button>Link 1</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <?php if ($image1 = get_theme_mod('projects_image2')): ?>
+                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 2">
+                    <?php endif; ?>
+                    <div class="info">
+                        <p>Description 2</p>
+                        <button>Link 2</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <?php if ($image1 = get_theme_mod('projects_image3')): ?>
+                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 3">
+                    <?php endif; ?>
+                    <div class="info">
+                        <p>Description 3</p>
+                        <button>Link 3</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <?php if ($image1 = get_theme_mod('projects_image4')): ?>
+                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 4">
+                    <?php endif; ?>
+                    <div class="info">
+                        <p>Description 4</p>
+                        <button>Link 4</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <?php if ($image1 = get_theme_mod('projects_image5')): ?>
+                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 5">
+                    <?php endif; ?>
+                    <div class="info">
+                        <p>Description 5</p>
+                        <button>Link 5</button>
+                    </div>
+                </div>
+            </div>
+            <button>
+                <!-- Custom field for CTA button -->
+            </button>
         </section>
     </main>
 

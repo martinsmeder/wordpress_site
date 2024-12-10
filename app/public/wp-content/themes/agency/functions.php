@@ -107,4 +107,26 @@ function visuals_customizer($wp_customize) {
 }
 add_action('customize_register', 'visuals_customizer');
 
+function projects_customizer($wp_customize) {
+    $wp_customize->add_section('projects_section', array(
+        'title'    => __('Projects Section', 'theme-textdomain'),
+        'priority' => 30,
+    ));
+
+    // Add up to 5 images for projects
+    for ($i = 1; $i <= 10; $i++) {
+        $wp_customize->add_setting("projects_image$i");
+        $wp_customize->add_control(new WP_Customize_Image_Control(
+            $wp_customize,
+            "projects_image$i",
+            array(
+                'label'    => __("Project Image $i", 'theme-textdomain'),
+                'section'  => 'projects_section',
+                'settings' => "projects_image$i",
+            )
+        ));
+    }
+}
+add_action('customize_register', 'projects_customizer');
+
 ?>
