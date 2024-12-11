@@ -21,6 +21,29 @@
     ?>
 
     <main class="projects-wrapper">
+    <?php
+        // Cards
+        $description1 = get_post_meta(get_the_ID(), 'description1', true) ?: 'Default Description 1';
+        $description2 = get_post_meta(get_the_ID(), 'description2', true) ?: 'Default Description 2';
+        $description3 = get_post_meta(get_the_ID(), 'description3', true) ?: 'Default Description 3';
+        $description4 = get_post_meta(get_the_ID(), 'description4', true) ?: 'Default Description 4';
+        $description5 = get_post_meta(get_the_ID(), 'description5', true) ?: 'Default Description 5';
+        
+        $button_text1 = get_post_meta(get_the_ID(), 'button_text1', true) ?: 'Default Button Text 1';
+        $button_text2 = get_post_meta(get_the_ID(), 'button_text2', true) ?: 'Default Button Text 2';
+        $button_text3 = get_post_meta(get_the_ID(), 'button_text3', true) ?: 'Default Button Text 3';
+        $button_text4 = get_post_meta(get_the_ID(), 'button_text4', true) ?: 'Default Button Text 4';
+        $button_text5 = get_post_meta(get_the_ID(), 'button_text5', true) ?: 'Default Button Text 5';
+        
+        $button_link1 = get_post_meta(get_the_ID(), 'button_link1', true) ?: '#';
+        $button_link2 = get_post_meta(get_the_ID(), 'button_link2', true) ?: '#';
+        $button_link3 = get_post_meta(get_the_ID(), 'button_link3', true) ?: '#';
+        $button_link4 = get_post_meta(get_the_ID(), 'button_link4', true) ?: '#';
+        $button_link5 = get_post_meta(get_the_ID(), 'button_link5', true) ?: '#';
+        
+    ?>
+
+
         <section class="projects-content">
             <h1>
                 <!-- Custom field for heading -->
@@ -31,44 +54,54 @@
                         <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 1">
                     <?php endif; ?>
                     <div class="info">
-                        <p>Description 1</p>
-                        <button>Link 1</button>
+                        <p><?php echo esc_html($description1); ?></p>
+                        <button class="link-button" onclick="window.open('<?php echo esc_url($button_link1); ?>', '_blank');">
+                            <?php echo esc_html($button_text1); ?>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <?php if ($image1 = get_theme_mod('projects_image2')): ?>
-                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 2">
+                    <?php if ($image2 = get_theme_mod('projects_image2')): ?>
+                        <img src="<?php echo esc_url($image2); ?>" class="projects-image" alt="Image 2">
                     <?php endif; ?>
                     <div class="info">
-                        <p>Description 2</p>
-                        <button>Link 2</button>
+                        <p><?php echo esc_html($description2); ?></p>
+                        <button class="link-button" onclick="window.open('<?php echo esc_url($button_link2); ?>', '_blank');">
+                            <?php echo esc_html($button_text2); ?>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <?php if ($image1 = get_theme_mod('projects_image3')): ?>
-                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 3">
+                    <?php if ($image3 = get_theme_mod('projects_image3')): ?>
+                        <img src="<?php echo esc_url($image3); ?>" class="projects-image" alt="Image 3">
                     <?php endif; ?>
                     <div class="info">
-                        <p>Description 3</p>
-                        <button>Link 3</button>
+                        <p><?php echo esc_html($description3); ?></p>
+                        <button class="link-button" onclick="window.open('<?php echo esc_url($button_link3); ?>', '_blank');">
+                            <?php echo esc_html($button_text3); ?>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <?php if ($image1 = get_theme_mod('projects_image4')): ?>
-                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 4">
+                    <?php if ($image4 = get_theme_mod('projects_image4')): ?>
+                        <img src="<?php echo esc_url($image4); ?>" class="projects-image" alt="Image 4">
                     <?php endif; ?>
                     <div class="info">
-                        <p>Description 4</p>
-                        <button>Link 4</button>
+                        <p><?php echo esc_html($description4); ?></p>
+                        <button class="link-button" onclick="window.open('<?php echo esc_url($button_link4); ?>', '_blank');">
+                            <?php echo esc_html($button_text4); ?>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <?php if ($image1 = get_theme_mod('projects_image5')): ?>
-                        <img src="<?php echo esc_url($image1); ?>" class="projects-image" alt="Image 5">
+                    <?php if ($image5 = get_theme_mod('projects_image5')): ?>
+                        <img src="<?php echo esc_url($image5); ?>" class="projects-image" alt="Image 5">
                     <?php endif; ?>
                     <div class="info">
-                        <p>Description 5</p>
-                        <button>Link 5</button>
+                        <p><?php echo esc_html($description5); ?></p>
+                        <button class="link-button" onclick="window.open('<?php echo esc_url($button_link5); ?>', '_blank');">
+                            <?php echo esc_html($button_text5); ?>
+                        </button>
                     </div>
                 </div>
             </div>
