@@ -4,11 +4,31 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
 .card {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    background: #000;
+    border: 1px solid #FFF;
 }
 
 .card img {
     width: 400px;
+}
+
+.card .info {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 50px 20px;
+
 }
