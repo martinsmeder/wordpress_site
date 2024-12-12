@@ -22,6 +22,9 @@
 
     <main class="projects-wrapper">
     <?php
+        // Heading
+        $heading = get_post_meta(get_the_ID(), 'heading', true) ?: 'Default Heading';
+
         // Cards
         $description1 = get_post_meta(get_the_ID(), 'description1', true) ?: 'Default Description 1';
         $description2 = get_post_meta(get_the_ID(), 'description2', true) ?: 'Default Description 2';
@@ -40,14 +43,16 @@
         $button_link3 = get_post_meta(get_the_ID(), 'button_link3', true) ?: '#';
         $button_link4 = get_post_meta(get_the_ID(), 'button_link4', true) ?: '#';
         $button_link5 = get_post_meta(get_the_ID(), 'button_link5', true) ?: '#';
-        
+
+        // Link to full portfolio
+        $portfolio_link_text = get_post_meta(get_the_ID(), 'portfolio_link_text', true) ?: 'Default Portfolio Link Text';
+        $portfolio_link = get_post_meta(get_the_ID(), 'portfolio_link', true) ?: '#';
     ?>
 
 
         <section class="projects-content">
-            <h1>
-                <!-- Custom field for heading -->
-            </h1>
+            <h1 class="projects-heading"><?php echo esc_html($heading); ?></h1>
+
             <div class="cards-list">
                 <div class="card">
                     <?php if ($image1 = get_theme_mod('projects_image1')): ?>
@@ -105,9 +110,10 @@
                     </div>
                 </div>
             </div>
-            <button>
-                <!-- Custom field for CTA button -->
-            </button>
+            
+            <a class="portfolio-link" target="_blank" href="<?php echo esc_url($portfolio_link); ?>">
+                <?php echo esc_html($portfolio_link_text); ?>
+            </a>
         </section>
     </main>
 

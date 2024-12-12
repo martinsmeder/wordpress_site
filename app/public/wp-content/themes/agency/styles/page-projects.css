@@ -4,12 +4,23 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-.cards-list {
+.projects-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
     padding-top: 50px;
+}
+
+.projects-heading {
+    font-size: 2.5rem;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
 .card {
@@ -58,4 +69,14 @@ Version: 1.0
 
 .card .info button:active {
     transform: scale(1.1);
+}
+
+.portfolio-link {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+.portfolio-link:hover {
+    text-decoration: underline;
 }
