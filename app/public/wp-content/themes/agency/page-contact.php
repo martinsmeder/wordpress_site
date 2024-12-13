@@ -21,17 +21,52 @@
     ?>
 
     <main>
-        <section class="contact-content">
-            <h1>Welcome to contact</h1>
-            <p>This is a custom template with its own styles.</p>
+    <?php
+        // Main CTA
+        $main_cta_heading1 = get_post_meta(get_the_ID(), 'main_cta_heading1', true) ?: 'Default Main CTA Heading 1';
+        $main_cta_heading2 = get_post_meta(get_the_ID(), 'main_cta_heading2', true) ?: 'Default Main CTA Heading 2';
 
-            <hr>
-            <!-- ====================== Or ========================= -->
-            <h1><?php the_title(); ?></h1>
-            <div><?php the_content(); ?></div>
+        // Contact info
+        $contact_address = get_post_meta(get_the_ID(), 'contact_address', true) ?: 'Default Contact Address';
+        $contact_city = get_post_meta(get_the_ID(), 'contact_city', true) ?: 'Default Contact City';
+        $contact_postal = get_post_meta(get_the_ID(), 'contact_postal', true) ?: 'Default Contact Postal';
+        $contact_country = get_post_meta(get_the_ID(), 'contact_country', true) ?: 'Default Contact Country';
+
+        // Email
+        $email_cta = get_post_meta(get_the_ID(), 'email_cta', true) ?: 'Default Email CTA';
+        $email_address = get_post_meta(get_the_ID(), 'email_address', true) ?: 'default@email.com';
+    ?>
+        <section class="contact-content">
+            <div class="main-cta">
+                <h1><?php echo esc_html($main_cta_heading1); ?></h1>
+                <h2><?php echo esc_html($main_cta_heading2); ?></h2>
+            </div>
+
+            <div class="contact">
+                <div class="company-and-address">
+                    <div class="name-and-logo"> 
+                        <?php 
+                        if (function_exists('the_custom_logo')) {
+                            the_custom_logo();
+                        }
+                        ?>
+                        <h3><?php bloginfo('name'); ?></h3>    
+                    </div>
+                    <div class="address">
+                        <p><?php echo esc_html($contact_address); ?></p>
+                        <p><?php echo esc_html($contact_city); ?>, <?php echo esc_html($contact_postal); ?></p>
+                        <p><?php echo esc_html($contact_country); ?></p>
+                    </div>
+                </div>
+                <div class="email">
+                    <h2><?php echo esc_html($email_cta); ?></h2>
+                    <a href="mailto:<?php echo esc_html($email_address); ?>"><?php echo esc_html($email_address); ?></a>
+                </div>
+            </div>
         </section>
     </main>
 
     <?php get_footer(); ?>
 </body>
 </html>
+
