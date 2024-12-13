@@ -33,7 +33,8 @@
         $contact_country = get_post_meta(get_the_ID(), 'contact_country', true) ?: 'Default Contact Country';
 
         // Email
-        $email_cta = get_post_meta(get_the_ID(), 'email_cta', true) ?: 'Default Email CTA';
+        $email_cta1 = get_post_meta(get_the_ID(), 'email_cta1', true) ?: 'Default Email CTA 1';
+        $email_cta2 = get_post_meta(get_the_ID(), 'email_cta2', true) ?: 'Default Email CTA 2';
         $email_address = get_post_meta(get_the_ID(), 'email_address', true) ?: 'default@email.com';
     ?>
         <section class="contact-content">
@@ -42,24 +43,10 @@
                 <h2><?php echo esc_html($main_cta_heading2); ?></h2>
             </div>
 
-            <div class="contact">
-                <div class="company-and-address">
-                    <div class="name-and-logo"> 
-                        <?php 
-                        if (function_exists('the_custom_logo')) {
-                            the_custom_logo();
-                        }
-                        ?>
-                        <h3><?php bloginfo('name'); ?></h3>    
-                    </div>
-                    <div class="address">
-                        <p><?php echo esc_html($contact_address); ?></p>
-                        <p><?php echo esc_html($contact_city); ?>, <?php echo esc_html($contact_postal); ?></p>
-                        <p><?php echo esc_html($contact_country); ?></p>
-                    </div>
-                </div>
+            <div class="email-wrapper">
                 <div class="email">
-                    <h2><?php echo esc_html($email_cta); ?></h2>
+                    <h3><?php echo esc_html($email_cta1); ?></h3>
+                    <p><?php echo esc_html($email_cta2); ?></p>
                     <a href="mailto:<?php echo esc_html($email_address); ?>"><?php echo esc_html($email_address); ?></a>
                 </div>
             </div>

@@ -4,20 +4,22 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-/* Styles specific to the Contact Page */
 .contact-content {
-    background-color: #0026ff;
-    color: #333;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    padding: 50px 50px 0px 50px;
 }
 
-.contact-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.contact-content .main-cta h1 {
+    font-size: 3rem;
 }
 
-.contact-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.contact-content .email-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-content .email a {
+    color: #FFF;
 }
