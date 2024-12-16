@@ -20,7 +20,7 @@
     get_header(); 
     ?>
 
-    <main>
+    <main class="contact-wrapper">
     <?php
         // Main CTA
         $main_cta_heading1 = get_post_meta(get_the_ID(), 'main_cta_heading1', true) ?: 'Default Main CTA Heading 1';
