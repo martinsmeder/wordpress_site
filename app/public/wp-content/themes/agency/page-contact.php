@@ -43,6 +43,8 @@
                 <h2><?php echo esc_html($main_cta_heading2); ?></h2>
             </div>
 
+            <?php the_content() ?>
+
             <div class="email-wrapper">
                 <div class="email">
                     <h3><?php echo esc_html($email_cta1); ?></h3>
