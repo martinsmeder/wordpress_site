@@ -1,6 +1,4 @@
 <footer>
-    <!-- Note: Should be customizable. -->
-
     <div class="top">
         <div class="left">
             <div class="name-and-logo">
