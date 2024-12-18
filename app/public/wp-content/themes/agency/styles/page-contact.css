@@ -4,24 +4,20 @@ Description: A simple custom theme.
 Version: 1.0
 */
 
-.contact-wrapper {
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, 0) 80%, black 100%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%),
-        linear-gradient(to right, rgba(0, 0, 0, 0) 50%, black 100%),
-        linear-gradient(to left, rgba(0, 0, 0, 0) 50%, black 100%),
-        url('../images/backgrounds/waves.jpg') no-repeat center center;
-}
-
 .contact-content {
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: 50px;
     padding: 50px 50px 0px 50px;
 }
 
 .contact-content .main-cta h1 {
     font-size: 3rem;
+}
+
+.contact-content iframe {
+    border: 1px solid #FFF;
+    border-radius: 25px;
 }
 
 .contact-content .email-wrapper {
@@ -40,6 +36,17 @@ Version: 1.0
 
     .contact-content .main-cta h2 {
         font-size: 1.3rem;
+    }
+
+    .contact-content iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 450px) {
+    .contact-content iframe {
+        height: 200px;
+        border-radius: 15px;
     }
 }
 
