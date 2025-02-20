@@ -5,7 +5,7 @@ Welcome to **Agency**, a sleek and modern WordPress theme designed for web agenc
 ## Live Demo
 
 Check out the live demo of the theme here:  
-[**Live Demo**](http://wpsite.infinityfreeapp.com/)
+[**Live Demo**](https://wpsite.infinityfreeapp.com/)
 
 ---
 
